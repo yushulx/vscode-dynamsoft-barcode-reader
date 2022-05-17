@@ -1,0 +1,83 @@
+{
+  "name": "dbr-code-generator",
+  "displayName": "Code Generator of Dynamsoft Barcode SDK",
+  "description": "Create sample projects of Dynamsoft Barcode SDK for C/C++, JavaScript, Python, C#, Java, and Swift.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.67.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "yushulx",
+  "icon": "res/dbr.jpg",
+  "activationEvents": [
+    "onCommand:dbr.dotnet",
+    "onCommand:dbr.cpp",
+	"onCommand:dbr.web",
+	"onCommand:dbr.python",
+    "onCommand:dbr.android",
+	"onCommand:dbr.ios",
+	"onCommand:dbr.doc"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dbr.dotnet",
+        "title": "DBR: Create Project for .NET"
+      },
+      {
+        "command": "dbr.cpp",
+        "title": "DBR: Create Project for C/C++"
+      },
+	  {
+        "command": "dbr.web",
+        "title": "DBR: Create Project for Web"
+      },
+      {
+        "command": "dbr.python",
+        "title": "DBR: Create Project for Python"
+      },
+	  {
+        "command": "dbr.android",
+        "title": "DBR: Create Project for Android"
+      },
+      {
+        "command": "dbr.ios",
+        "title": "DBR: Create Project for iOS"
+      },
+	  {
+        "command": "dbr.doc",
+        "title": "DBR: Online Documentation"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "14.x",
+    "@types/vscode": "^1.67.0",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "@vscode/test-electron": "^2.1.3",
+    "eslint": "^8.14.0",
+    "glob": "^8.0.1",
+    "mocha": "^9.2.2",
+    "typescript": "^4.6.4"
+  },
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/yushulx/vscode-dbr-code-generator"
+  },
+  "author": "yushulx",
+  "license": "MIT"
+}
