@@ -23,7 +23,7 @@ The Code Generator helps developers to quickly get started with [Dynamsoft Barco
         ```
     - **Python** (**Windows**, **Linux**, and **macOS**)
         ```bash
-        pip install dbr
+        pip install dbr pyside2 opencv-python
         python app.py
         ```
     - **.NET** (**Windows**, **Linux**, and **macOS**)

@@ -1,8 +1,8 @@
 {
   "name": "dbr-code-generator",
-  "displayName": "Code Generator of Dynamsoft Barcode SDK",
+  "displayName": "Code Generator for Dynamsoft Barcode SDK",
   "description": "Create sample projects of Dynamsoft Barcode SDK for C/C++, JavaScript, Python, C#, Java, and Swift.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.67.0"
   },
