@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BarcodeQRCodeSDK" Version="2.0.0" />
+    <PackageReference Include="BarcodeQRCodeSDK" Version="2.0.1" />
   </ItemGroup>
 </Project>

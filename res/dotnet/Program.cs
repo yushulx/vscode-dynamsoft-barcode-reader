@@ -8,29 +8,7 @@ namespace Test
     class Program
     {
         static void Main(string[] args)
-        {
-            //Directory.SetCurrentDirectory("");
-            string dir = Directory.GetCurrentDirectory();
-            string[] files = Directory.GetDirectories(dir, "runtimes", SearchOption.AllDirectories);
-            Console.WriteLine(files[0]);
-
-            // Check supported platforms
-            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                Console.WriteLine("Platform: Windows");
-                Directory.SetCurrentDirectory(files[0] + "/win-x64/native");
-            }
-            else if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                Console.WriteLine("Platform: Linux");
-                Directory.SetCurrentDirectory(files[0] + "/linux-x64/native");
-            }
-            else if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                Console.WriteLine("Platform: macOS");
-                Directory.SetCurrentDirectory(files[0] + "/osx-x64/native");
-            }
-            
+        {            
             BarcodeQRCodeReader.InitLicense("DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ=="); // Get a license key from https://www.dynamsoft.com/customer/license/trialLicense?product=dbr
             BarcodeQRCodeReader? reader = null;
             try {
