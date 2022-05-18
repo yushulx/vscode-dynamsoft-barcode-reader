@@ -2,6 +2,53 @@
 
 The Code Generator helps developers to quickly get started with [Dynamsoft Barcode Reader SDK](https://www.dynamsoft.com/barcode-reader/overview/) using JavaScript, Python, C/C++, .NET, Android, and iOS in Visual Studio Code.
 
+## Dynamsoft Barcode Reader Version
+v9.0.0
+
+## Supported Platforms
+- **Android**
+- **iOS**
+- **Windows**
+- **Linux**
+- **macOS**
+- **Web**
+
+## Supported Barcode Symbologies
+- Linear Barcodes (1D)
+  - Code 39 (including Code 39 Extended)
+  - Code 93
+  - Code 128
+  - Codabar
+  - Interleaved 2 of 5
+  - EAN-8
+  - EAN-13
+  - UPC-A
+  - UPC-E
+  - Industrial 2 of 5
+
+- 2D Barcodes
+  - QR Code (including Micro QR Code and Model 1)
+  - Data Matrix
+  - PDF417 (including Micro PDF417)
+  - Aztec Code
+  - MaxiCode (mode 2-5)
+  - DotCode
+
+- Patch Code
+- GS1 Composite Code
+- GS1 DataBar
+  - Omnidirectional,
+  - Truncated, Stacked, Stacked
+  - Omnidirectional, Limited,
+  - Expanded, Expanded Stacked
+
+- Postal Codes
+  - USPS Intelligent Mail
+  - Postnet
+  - Planet
+  - Australian Post
+  - UK Royal Mail  
+
 ## Dev Requirements for Windows, Linux and macOS
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/)
 - [CMake](https://cmake.org/download/)
