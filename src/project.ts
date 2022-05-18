@@ -39,30 +39,31 @@ export class Manager {
     async createProject(option: string) {
         // Select the project type
         let projectType: string = Type.CONSOLE;
+        let root: string = '';
         let src: string = '';
         switch (option) {
             case "dotnet":
-                src = this.samples.dotnet;
+                root = this.samples.dotnet;
                 projectType = await this.getProjectType([Type.CONSOLE, Type.WINFORMS]);
                 break;
             case "cpp":
-                src = this.samples.cpp;
+                root = this.samples.cpp;
                 projectType = await this.getProjectType([Type.CONSOLE]);
                 break;
             case "web":
-                src = this.samples.web;
+                root = this.samples.web;
                 projectType = await this.getProjectType([Type.FILE, Type.CAMERA]);
                 break;
             case "python":
-                src = this.samples.python;
+                root = this.samples.python;
                 projectType = await this.getProjectType([Type.CONSOLE, Type.GUI]);
                 break;
             case "android":
-                src = this.samples.android;
+                root = this.samples.android;
                 projectType = await this.getProjectType([Type.CAMERA]);
                 break;
             case "ios":
-                src = this.samples.ios;
+                root = this.samples.ios;
                 projectType = await this.getProjectType([Type.CAMERA]);
                 break;
         }
@@ -70,19 +71,19 @@ export class Manager {
 
         switch (projectType) {
             case Type.CONSOLE:
-                src = path.join(src, FolderName.FOLDER_NAME_CONSOLE);
+                src = path.join(root, FolderName.FOLDER_NAME_CONSOLE);
                 break;
             case Type.WINFORMS:
-                src = path.join(src, FolderName.FOLDER_NAME_WINFORMS);
+                src = path.join(root, FolderName.FOLDER_NAME_WINFORMS);
                 break;
             case Type.FILE:
-                src = path.join(src, FolderName.FOLDER_NAME_FILE);
+                src = path.join(root, FolderName.FOLDER_NAME_FILE);
                 break;
             case Type.CAMERA:
-                src = path.join(src, FolderName.FOLDER_NAME_CAMERA);
+                src = path.join(root, FolderName.FOLDER_NAME_CAMERA);
                 break;
             case Type.GUI:
-                src = path.join(src, FolderName.FOLDER_NAME_GUI);
+                src = path.join(root, FolderName.FOLDER_NAME_GUI);
                 break;
         }
 
@@ -117,12 +118,19 @@ export class Manager {
         }
         
         if (option === 'cpp') {
-            src = path.join(__dirname, '../node_modules/barcode4nodejs/platforms');
-            des = path.join(des, 'platforms');
-            if (!fs.existsSync(des)) {
-                fs.mkdirSync(des);
+            src = path.join(root, 'lib');
+            let libFolder = path.join(des, 'lib');
+            if (!fs.existsSync(libFolder)) {
+                fs.mkdirSync(libFolder);
             }
-            copyFolder(src, des);
+            copyFolder(src, libFolder);
+
+            src = path.join(root, 'include');
+            let includeFolder = path.join(des, 'include');
+            if (!fs.existsSync(includeFolder)) {
+                fs.mkdirSync(includeFolder);
+            }
+            copyFolder(src, includeFolder);
         }
     }
 

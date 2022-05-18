@@ -1,4 +1,7 @@
 # Change Log
+## 1.1.1
+- Fixed lib missing for C++.
+
 ## 1.1.0
 - Added WinForms project for .NET.
 - Added console project for Python.

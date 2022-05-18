@@ -2,7 +2,7 @@
   "name": "dbr-code-generator",
   "displayName": "Code Generator for Dynamsoft Barcode SDK",
   "description": "Create sample projects of Dynamsoft Barcode SDK for C/C++, JavaScript, Python, C#, Java, and Swift.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.67.0"
   },
@@ -68,8 +68,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint": "eslint src --ext ts"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
@@ -89,8 +88,5 @@
     "url": "https://github.com/yushulx/vscode-dbr-code-generator"
   },
   "author": "yushulx",
-  "license": "MIT",
-  "dependencies": {
-    "barcode4nodejs": "^9.0.1"
-  }
+  "license": "MIT"
 }
