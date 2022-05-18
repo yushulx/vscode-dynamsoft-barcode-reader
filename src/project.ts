@@ -1,4 +1,3 @@
-import { scrypt } from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
@@ -95,26 +94,36 @@ export class Manager {
         const answer = await vscode.window.showQuickPick(['Yes', 'No'], { placeHolder: 'Do you want to create a new folder?' });
         if (!answer) { return;}
     
+        let des: string = '';
         if (answer === "Yes") {
-            const folderPath = await this.openFolder();
-            if (folderPath !== '') {
-                copyFolder(src, folderPath);
+            des = await this.openFolder();
+            if (des !== '') {
+                copyFolder(src, des);
             }
         }
         else {
             let folders = vscode.workspace.workspaceFolders;
             if (!folders) {
-                const folderPath = await this.openFolder();
-                if (folderPath !== '') {
-                    copyFolder(src, folderPath);
+                des = await this.openFolder();
+                if (des !== '') {
+                    copyFolder(src, des);
                 }
             }
             else {
+                des = folders[0].uri.fsPath;
                 vscode.window.showInformationMessage(folders[0].uri.fsPath);
-                copyFolder(src, folders[0].uri.fsPath);
+                copyFolder(src, des);
             }
         }
-    
+        
+        if (option === 'cpp') {
+            src = path.join(__dirname, '../node_modules/barcode4nodejs/platforms');
+            des = path.join(des, 'platforms');
+            if (!fs.existsSync(des)) {
+                fs.mkdirSync(des);
+            }
+            copyFolder(src, des);
+        }
     }
 
     async openFolder() {

@@ -30,7 +30,13 @@ export function activate(context: vscode.ExtensionContext) {
 		}),
 		vscode.commands.registerCommand('dbr.doc', async () => {
 			vscode.env.openExternal(vscode.Uri.parse('https://www.dynamsoft.com/barcode-reader/introduction/?ver=latest'));
-		})
+		}),
+		vscode.commands.registerCommand('dbr.demo', async () => {
+			vscode.env.openExternal(vscode.Uri.parse('https://demo.dynamsoft.com/barcode-reader/'));
+		}),
+		vscode.commands.registerCommand('dbr.about', async () => {
+			vscode.env.openExternal(vscode.Uri.parse('https://www.dynamsoft.com/barcode-reader/overview/'));
+		}),
 	]);
 }
 

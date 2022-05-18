@@ -1,8 +1,14 @@
 # Change Log
+## 1.1.0
+- Added WinForms project for .NET.
+- Added console project for Python.
+- Added link for online demo.
+- Added link for documentation.
+
 ## 1.0.1
 
-- Updated README.md
+- Updated README.md.
 
 ## 1.0.0
 
-- Initial release
+- Initial release.

@@ -2,7 +2,7 @@
   "name": "dbr-code-generator",
   "displayName": "Code Generator for Dynamsoft Barcode SDK",
   "description": "Create sample projects of Dynamsoft Barcode SDK for C/C++, JavaScript, Python, C#, Java, and Swift.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.67.0"
   },
@@ -14,42 +14,52 @@
   "activationEvents": [
     "onCommand:dbr.dotnet",
     "onCommand:dbr.cpp",
-	"onCommand:dbr.web",
-	"onCommand:dbr.python",
+    "onCommand:dbr.web",
+    "onCommand:dbr.python",
     "onCommand:dbr.android",
-	"onCommand:dbr.ios",
-	"onCommand:dbr.doc"
+    "onCommand:dbr.ios",
+    "onCommand:dbr.doc",
+    "onCommand:dbr.demo",
+    "onCommand:dbr.about"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "dbr.dotnet",
-        "title": "DBR: Create Project for .NET"
+        "title": "DBR: Create .NET Project"
       },
       {
         "command": "dbr.cpp",
-        "title": "DBR: Create Project for C/C++"
+        "title": "DBR: Create C/C++ Project"
       },
-	  {
+      {
         "command": "dbr.web",
-        "title": "DBR: Create Project for Web"
+        "title": "DBR: Create Web Project"
       },
       {
         "command": "dbr.python",
-        "title": "DBR: Create Project for Python"
+        "title": "DBR: Create Python Project"
       },
-	  {
+      {
         "command": "dbr.android",
-        "title": "DBR: Create Project for Android"
+        "title": "DBR: Create Android Project"
       },
       {
         "command": "dbr.ios",
-        "title": "DBR: Create Project for iOS"
+        "title": "DBR: Create iOS Project"
       },
-	  {
+      {
         "command": "dbr.doc",
         "title": "DBR: Online Documentation"
+      },
+      {
+        "command": "dbr.demo",
+        "title": "DBR: Online Demo"
+      },
+      {
+        "command": "dbr.about",
+        "title": "DBR: About Dynamsoft Barcode Reader"
       }
     ]
   },
@@ -75,9 +85,12 @@
     "typescript": "^4.6.4"
   },
   "repository": {
-	"type": "git",
-	"url": "https://github.com/yushulx/vscode-dbr-code-generator"
+    "type": "git",
+    "url": "https://github.com/yushulx/vscode-dbr-code-generator"
   },
   "author": "yushulx",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "barcode4nodejs": "^9.0.1"
+  }
 }
