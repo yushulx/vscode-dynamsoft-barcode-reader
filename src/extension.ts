@@ -98,11 +98,29 @@ async function openFolder() {
 }
 
 async function createProject(src: string) {
-	
-	const folderPath = await openFolder();
-	if (folderPath !== '') {
-		copyFolderSync(src, folderPath);
+	const answer = await vscode.window.showQuickPick(['Yes', 'No'], { placeHolder: 'Do you want to create a new folder?' });
+	if (!answer) { return false; }
+
+	if (answer === "Yes") {
+		const folderPath = await openFolder();
+		if (folderPath !== '') {
+			copyFolderSync(src, folderPath);
+		}
 	}
+	else {
+		let folders = vscode.workspace.workspaceFolders;
+		if (!folders) {
+			const folderPath = await openFolder();
+			if (folderPath !== '') {
+				copyFolderSync(src, folderPath);
+			}
+		}
+		else {
+			vscode.window.showInformationMessage(folders[0].uri.fsPath);
+			copyFolderSync(src, folders[0].uri.fsPath);
+		}
+	}
+
 }
 
 // this method is called when your extension is deactivated
