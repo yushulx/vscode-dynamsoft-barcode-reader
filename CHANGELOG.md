@@ -1,4 +1,8 @@
 # Change Log
+## 1.2.0
+- Supported parameter template download.
+- Added code snippets for Java, Swift, Cpp, C#, Python and HTML.
+
 ## 1.1.1
 - Fixed lib missing for C++.
 

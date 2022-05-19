@@ -2,12 +2,13 @@
   "name": "dbr-code-generator",
   "displayName": "Code Generator for Dynamsoft Barcode SDK",
   "description": "Create sample projects of Dynamsoft Barcode SDK for C/C++, JavaScript, Python, C#, Java, and Swift.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.67.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Snippets"
   ],
   "publisher": "yushulx",
   "icon": "res/dbr.jpg",
@@ -66,7 +67,33 @@
         "command": "dbr.param",
         "title": "DBR: Download parameter template files"
       }
-    ]
+    ],
+    "snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/python.json"
+			},
+      {
+				"language": "csharp",
+				"path": "./snippets/csharp.json"
+			},
+      {
+				"language": "html",
+				"path": "./snippets/web.json"
+			},
+      {
+				"language": "cpp",
+				"path": "./snippets/cpp.json"
+			},
+      {
+				"language": "java",
+				"path": "./snippets/android.json"
+			},
+      {
+				"language": "swift",
+				"path": "./snippets/swift.json"
+			}
+		]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

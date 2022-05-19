@@ -1,0 +1,19 @@
+{
+    "import": {
+		"prefix": "dbr import",
+		"body": [
+			"#include \"DynamsoftBarcodeReader.h\"",
+            "#include \"BarcodeReaderConfig.h\""
+		],
+		"description": "Import Dynamsoft Barcode Reader"
+	},
+	"init": {
+		"prefix": "dbr create",
+		"body": [
+			"char errorMsgBuffer[512];",
+            "DBR_InitLicense(\"DLS2eyJoYW5kc2hha2VDb2RlIjoiMjAwMDAxLTE2NDk4Mjk3OTI2MzUiLCJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSIsInNlc3Npb25QYXNzd29yZCI6IndTcGR6Vm05WDJrcEQ5YUoifQ==\", errorMsgBuffer, 512);",
+            "void *reader = DBR_CreateInstance();"
+		],
+		"description": "Initialize Dynamsoft Barcode Reader"
+	}
+}
