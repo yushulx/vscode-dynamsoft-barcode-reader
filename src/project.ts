@@ -20,7 +20,7 @@ enum FolderName {
     FOLDER_NAME_GUI = 'gui',
 }
 
-export class Manager {
+export class ProjectManager {
     private samples = {
         "python": path.join(__dirname, '../res/python/'),
         "dotnet": path.join(__dirname, '../res/dotnet/'),

@@ -20,7 +20,8 @@
     "onCommand:dbr.ios",
     "onCommand:dbr.doc",
     "onCommand:dbr.demo",
-    "onCommand:dbr.about"
+    "onCommand:dbr.about",
+    "onCommand:dbr.param"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -60,6 +61,10 @@
       {
         "command": "dbr.about",
         "title": "DBR: About Dynamsoft Barcode Reader"
+      },
+      {
+        "command": "dbr.param",
+        "title": "DBR: Download parameter template files"
       }
     ]
   },

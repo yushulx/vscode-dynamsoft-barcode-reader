@@ -1,9 +1,11 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import { Manager } from './project';
+import { ParameterManager } from './parameter';
+import { ProjectManager } from './project';
 
-let manager = new Manager();
+const projectManager = new ProjectManager();
+const parameterManager = new ParameterManager();
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -11,22 +13,22 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(...[
 		vscode.commands.registerCommand('dbr.dotnet', async () => {
-			manager.createProject('dotnet');
+			projectManager.createProject('dotnet');
 		}),
 		vscode.commands.registerCommand('dbr.cpp', async () => {
-			manager.createProject('cpp');
+			projectManager.createProject('cpp');
 		}),
 		vscode.commands.registerCommand('dbr.web', async () => {
-			manager.createProject('web');
+			projectManager.createProject('web');
 		}),
 		vscode.commands.registerCommand('dbr.python', async () => {
-			manager.createProject('python');
+			projectManager.createProject('python');
 		}),
 		vscode.commands.registerCommand('dbr.android', async () => {
-			manager.createProject('android');
+			projectManager.createProject('android');
 		}),
 		vscode.commands.registerCommand('dbr.ios', async () => {
-			manager.createProject('ios');
+			projectManager.createProject('ios');
 		}),
 		vscode.commands.registerCommand('dbr.doc', async () => {
 			vscode.env.openExternal(vscode.Uri.parse('https://www.dynamsoft.com/barcode-reader/introduction/?ver=latest'));
@@ -36,6 +38,9 @@ export function activate(context: vscode.ExtensionContext) {
 		}),
 		vscode.commands.registerCommand('dbr.about', async () => {
 			vscode.env.openExternal(vscode.Uri.parse('https://www.dynamsoft.com/barcode-reader/overview/'));
+		}),
+		vscode.commands.registerCommand('dbr.param', async () => {
+			parameterManager.downloadParameterFile();
 		}),
 	]);
 }
