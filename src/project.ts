@@ -32,10 +32,10 @@ export class Manager {
 
     async getProjectType(types: string[]) {
         const projectType = await vscode.window.showQuickPick(types, { placeHolder: 'Create a new project' });
-        if (!projectType) { return '';}
+        if (!projectType) { return ''; }
         return projectType;
     }
-    
+
     async createProject(option: string) {
         // Select the project type
         let projectType: string = Type.CONSOLE;
@@ -67,7 +67,7 @@ export class Manager {
                 projectType = await this.getProjectType([Type.CAMERA]);
                 break;
         }
-        if (projectType === '') {return;}
+        if (projectType === '') { return; }
 
         switch (projectType) {
             case Type.CONSOLE:
@@ -93,8 +93,8 @@ export class Manager {
 
         // Select the project folder
         const answer = await vscode.window.showQuickPick(['Yes', 'No'], { placeHolder: 'Do you want to create a new folder?' });
-        if (!answer) { return;}
-    
+        if (!answer) { return; }
+
         let des: string = '';
         if (answer === "Yes") {
             des = await this.openFolder();
@@ -116,7 +116,7 @@ export class Manager {
                 copyFolder(src, des);
             }
         }
-        
+
         if (option === 'cpp') {
             src = path.join(root, 'lib');
             let libFolder = path.join(des, 'lib');
@@ -147,25 +147,23 @@ export class Manager {
         if (!projectName) {
             return '';
         }
-    
+
         let workspace = '';
         const folderUris = await vscode.window.showOpenDialog({ canSelectFolders: true, canSelectFiles: false, canSelectMany: false, openLabel: 'Select folder' });
         if (!folderUris) {
             return '';
         }
-    
+
         let workspaceFolderUri = folderUris[0];
-        console.log(workspaceFolderUri);
-        vscode.commands.executeCommand("vscode.openFolder", workspaceFolderUri);
-        vscode.window.showInformationMessage(workspaceFolderUri.fsPath);
         workspace = workspaceFolderUri.fsPath;
         let projectFolder = path.join(workspace, projectName);
         if (!fs.existsSync(projectFolder)) {
             fs.mkdirSync(projectFolder);
         }
-    
-        vscode.commands.executeCommand("vscode.openFolder", Uri.file(projectFolder));
-    
+
+        console.log("Open " + projectFolder);
+        await vscode.commands.executeCommand("vscode.openFolder", Uri.file(projectFolder), { forceNewWindow: true });
+
         return projectFolder;
     }
 }
