@@ -58,6 +58,8 @@ v9.0.0
 - [Xcode](https://developer.apple.com/xcode/)
 
 ## Usage
+
+### Create DBR Projects
 1. Press `F1` to show command palette and run **DBR** to list all supported projects.
     
     ![vscode-dbr-extension](https://www.dynamsoft.com/codepool/img/2022/05/vscode-dbr-extension.png)
@@ -98,4 +100,7 @@ v9.0.0
         
         Run `pod install` and import the project to Xcode.
 
+### Generate DBR Code Snippets in Python, C/C++, C#, Java, Swift and HTML
+In corresponding language files, you can find the code snippets with prefix `dbr`.
 
+![dbr code snippets](https://www.dynamsoft.com/codepool/img/2022/05/vscode-dbr-snippets.gif)
