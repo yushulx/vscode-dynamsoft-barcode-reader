@@ -10,7 +10,7 @@
     "Other",
     "Snippets"
   ],
-  "publisher": "yushulx",
+  "publisher": "Dynamsoft",
   "icon": "res/dbr.jpg",
   "activationEvents": [
     "onCommand:dbr.dotnet",
