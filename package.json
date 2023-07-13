@@ -1,8 +1,8 @@
 {
-  "name": "dbr-code-generator",
-  "displayName": "Code Generator for Dynamsoft Barcode SDK",
-  "description": "Create sample projects of Dynamsoft Barcode SDK for C/C++, JavaScript, Python, C#, Java, and Swift.",
-  "version": "1.2.0",
+  "name": "dynamsoft-barcode-reader",
+  "displayName": "Dynamsoft Barcode Reader Dev Kit",
+  "description": "Develop sample projects utilizing Dynamsoft Barcode SDK in various languages including C/C++, JavaScript, Python, C#, Java, and Swift.",
+  "version": "2.0.0",
   "engines": {
     "vscode": "^1.67.0"
   },
@@ -117,7 +117,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yushulx/vscode-dbr-code-generator"
+    "url": "https://github.com/yushulx/vscode-dynamsoft-barcode-reader"
   },
   "author": "yushulx",
   "license": "MIT"

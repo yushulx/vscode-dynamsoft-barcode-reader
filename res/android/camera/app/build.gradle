@@ -45,5 +45,5 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha27"
 
     implementation 'com.dynamsoft:dynamsoftcameraenhancer:2.1.0@aar'
-    implementation 'com.dynamsoft:dynamsoftbarcodereader:9.0.0@aar'
+    implementation 'com.dynamsoft:dynamsoftbarcodereader:9.6.20@aar'
 }
